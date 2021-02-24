@@ -1,5 +1,5 @@
-FROM alpine:3.8
-
-    RUN apk update
-
-    RUN apk add nodejs
+FROM openjdk:7
+COPY . /usr/src/myapp
+WORKDIR /usr/src/myapp
+RUN javac Main.java
+CMD ["java", "Main"]
